@@ -1,0 +1,51 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Стили для галереи */
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Позволяет элементам автоматически переноситься на следующую строку */
+    gap: 20px; /* Промежутки между элементами галереи */
+}
+
+.gallery-item {
+    width: 150px; /* Уменьшаем контейнер для изображения */
+    height: 150px; /* Уменьшаем контейнер для изображения */
+    overflow: hidden; /* Прячем излишки изображений */
+    border-radius: 10px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    /* Добавляем плавный переход для анимации трансформации и тени */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto; /* Поддерживаем пропорции изображения */
+    object-fit: cover; /* Изображение подгоняется под контейнер, сохраняя пропорции */
+    transition: transform 0.4s ease; /* Переход для анимации масштабирования изображения */
+}
+
+/* Анимация при наведении */
+.gallery-item:hover {
+    transform: scale(1.1) rotate(5deg); /* Увеличение и поворот при наведении */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Добавляем тень для эффекта объема */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.2); /* Увеличение изображения при наведении на элемент галереи */
+}
